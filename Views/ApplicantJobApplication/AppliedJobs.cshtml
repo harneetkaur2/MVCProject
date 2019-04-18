@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MVCProject.Models.AppliedJobs>
+@{
+	ViewBag.Title = "AppliedJobs";
+}
+
+<h2>AppliedJobs</h2>
+
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.ApplicantId)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.AppliedId)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.JobTitle)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.JobDescription)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.ApplicationDate)
+		</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.ApplicantId)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.AppliedId)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.JobTitle)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.JobDescription)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ApplicationDate)
+			</td>
+			
+			</tr>
+	}
+
+</table>
+

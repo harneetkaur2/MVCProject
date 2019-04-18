@@ -1,0 +1,81 @@
+﻿@model CareerCloud.Pocos.CompanyJobPoco
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CompanyJobPoco</h4>
+    <hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.CompanyProfile.CompanyWebsite)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.CompanyProfile.CompanyWebsite)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ProfileCreated)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ProfileCreated)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.IsInactive)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.IsInactive)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.IsCompanyHidden)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.IsCompanyHidden)
+		</dd>
+		<dt>
+		  Job Applications
+		</dt>
+
+		<dd>
+			@Html.ActionLink("Various Applications", "index" , new { Controller ="ApplicantJobApplication" ,
+		   id = Model.Id})
+		</dd>
+		<dt>
+			Job Descriptions
+		</dt>
+
+		<dd>
+			@Html.ActionLink("Job Description", "index" , new { Controller = "CompanyJobDescription",
+		   id = Model.Id})
+		</dd>
+		<dt>
+			Job Skills
+		</dt>
+
+		<dd>
+			@Html.ActionLink("All Skills", "index" , new { Controller ="CompanyJobSkill" ,
+		   id = Model.Id})
+		</dd>
+		<dt>
+			Job Educations
+		</dt>
+
+		<dd>
+			@Html.ActionLink("All Educations", "index" , new { Controller ="CompanyJobEducation" ,
+		   id = Model.Id})
+		</dd>
+	</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
